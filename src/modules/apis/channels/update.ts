@@ -1,7 +1,7 @@
 import responseHandeling from "../../../core/responseHandeling";
 import { useHeaders, useUrl } from "../../../core";
-import {config} from "../../config";
-import {IProject} from "../../interface/IProject";
+import { config } from "../../config";
+import {IChannel} from "../../interface/IChannel";
 
 /**
  * @description update a trading account
@@ -13,9 +13,14 @@ import {IProject} from "../../interface/IProject";
  */
 
 export const update = async (
-  endpoint?: string, identifier?:any,id?:any
-): Promise<IProject> => {
-  return await fetch(useUrl(endpoint ? endpoint : config.endpoints.projects+id), useHeaders(identifier,"PUT")).then(async (response) => {
+  endpoint?: string,
+  identifier?: any,
+  id?: any
+): Promise<IChannel> => {
+  return await fetch(
+    useUrl(endpoint ? endpoint : config.endpoints.channels + id),
+    useHeaders(identifier, "PUT")
+  ).then(async (response) => {
     return await responseHandeling(response);
   });
 };

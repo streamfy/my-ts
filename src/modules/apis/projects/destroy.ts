@@ -1,20 +1,24 @@
 import responseHandeling from "../../../core/responseHandeling";
 import { useHeaders, useUrl } from "../../../core";
-import {IDelete} from "../../interface/IDelete";
-import {config} from "../../config";
+import { IDelete } from "../../interface/IDelete";
+import { config } from "../../config";
 
 /**
- * @description delete a trading account
- * @returns a trading account delete res
- * @default  endpoint is /my/trading/accounts/id
- * @param endpoint
- * @param id
+ * @description delete a project
+ * @returns almost nothing
+ * @default  endpoint is /my/projects
+ * @param uuid
  */
 
 export const destroy = async (
-  endpoint?: string,id?:string
+  endpoint?: string,
+  id?: string,
+  token?: string
 ): Promise<IDelete> => {
-  return await fetch(useUrl(endpoint ? endpoint : config.endpoints.projects+id), useHeaders("DELETE")).then(async (response) => {
+  return await fetch(
+    useUrl(endpoint ? endpoint : config.endpoints.projects + id),
+    useHeaders(undefined, "DELETE", { [config.authorization]: token })
+  ).then(async (response) => {
     return await responseHandeling(response);
   });
 };

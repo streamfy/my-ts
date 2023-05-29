@@ -4,16 +4,17 @@ import { IConfig } from "./interface/Config";
  * @returns your base URL is Set and other configs added
  */
 export let config: IConfig = {
-  baseURL: "https://api.streamfy.net/v1/my",
+  baseURL: "https://api.streamfy.net/",
+  apiVersion: "v1/",
+  baseEndpoint: "my/",
   headers: {},
-  apiVersion: "v1",
   authorization: "Authorization",
   endpoints: {
-    projects: "/projects/",
-    channels: "/channels/",
-    playlists: "/playlists/",
-    videos: "/videos/",
-    shorts: "/shorts/",
-    tags: "/tags/",
+    projects: "projects/",
+    channels: "channels/",
+    playlists: "playlists/",
+    videos: "videos/",
+    shorts: "shorts/",
+    tags: "tags/",
   },
 };
