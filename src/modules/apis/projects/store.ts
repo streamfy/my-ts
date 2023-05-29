@@ -1,20 +1,25 @@
 import responseHandeling from "../../../core/responseHandeling";
 import { useHeaders, useUrl } from "../../../core";
-import {config} from "../../config";
-import {IProject} from "../../interface/IProject";
+import { config } from "../../config";
+import { IProject, IProjectResponse } from "../../interface/IProject";
 
 /**
- * @description post trading accounts
- * @returns trading accounts post response
- * @default  endpoint is /my/trading/accounts
+ * @description post new project
+ * @returns new project data
+ * @default  endpoint is /my/projects
+ * @param token authorization in header
  * @param endpoint
- * @param identifier
+ * @param payload project info
  */
-
 export const store = async (
-  endpoint?: string, identifier?:any
-): Promise<IProject> => {
-  return await fetch(useUrl(endpoint ? endpoint : config.endpoints.projects), useHeaders(identifier,"POST")).then(async (response) => {
+  endpoint?: string,
+  payload?: IProject,
+  token?: string
+): Promise<IProjectResponse> => {
+  return await fetch(
+    useUrl(endpoint ? endpoint : config.endpoints.projects),
+    useHeaders(payload, "POST", { [config.authorization]: token })
+  ).then(async (response) => {
     return await responseHandeling(response);
   });
 };
