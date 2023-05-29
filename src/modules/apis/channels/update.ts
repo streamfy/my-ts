@@ -1,7 +1,7 @@
 import responseHandeling from "../../../core/responseHandeling";
 import { useHeaders, useUrl } from "../../../core";
 import { config } from "../../config";
-import { IUpdate } from "../../interface/IUpdate";
+import {IChannel} from "../../interface/IChannel";
 
 /**
  * @description update a trading account
@@ -16,7 +16,7 @@ export const update = async (
   endpoint?: string,
   identifier?: any,
   id?: any
-): Promise<IUpdate> => {
+): Promise<IChannel> => {
   return await fetch(
     useUrl(endpoint ? endpoint : config.endpoints.channels + id),
     useHeaders(identifier, "PUT")
