@@ -1,0 +1,50 @@
+{
+  "name": "@streamfy/my-ts",
+  "private": false,
+  "version": "1.0.0-alpha.1",
+  "type": "module",
+  "main": "./dist/my-ts.umd.cjs",
+  "module": "./dist/my-ts.js",
+  "types": "./dist/index.d.ts",
+  "license": "ISC",
+  "keywords": [
+    "api",
+    "typescript",
+    "rest",
+    "stream",
+    "streamfy"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/my-ts.js",
+      "require": "./dist/my-ts.umd.cjs"
+    }
+  },
+  "repository": {
+    "url": "https://github.com/streamfy/my-ts",
+    "directory": "/src"
+  },
+  "bugs": {
+    "url": "https://github.com/streamfy/my-ts/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "test": "vitest --ui",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.5",
+    "@vitest/ui": "^0.30.1",
+    "express": "^4.18.2",
+    "happy-dom": "^9.19.2",
+    "msw": "^1.2.1",
+    "typescript": "^4.9.3",
+    "vite": "^4.2.0",
+    "vite-plugin-dts": "^2.1.0",
+    "vitest": "^0.29.7"
+  }
+}
