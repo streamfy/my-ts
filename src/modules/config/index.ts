@@ -9,6 +9,7 @@ export let config: IConfig = {
   baseEndpoint: "my/",
   headers: {},
   authorization: "Authorization",
+  token: "",
   endpoints: {
     projects: "projects/",
     channels: "channels/",

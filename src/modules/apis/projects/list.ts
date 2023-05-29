@@ -9,13 +9,10 @@ import { IProjectList } from "../../interface/IProjectList";
  * @default  endpoint is /projects
  * @param token should be sent in header
  */
-export const list = async (
-  endpoint?: string,
-  token?: string
-): Promise<IProjectList> => {
+export const list = async (endpoint?: string): Promise<IProjectList> => {
   return await fetch(
     useUrl(endpoint ? endpoint : config.endpoints.projects),
-    useHeaders(undefined, undefined, { [config.authorization]: token })
+    useHeaders()
   ).then(async (response) => {
     return await responseHandeling(response);
   });

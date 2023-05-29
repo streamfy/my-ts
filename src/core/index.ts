@@ -19,7 +19,12 @@ export const useHeaders = (
   extraHeaders?: any
 ) => {
   return {
-    headers: { ...requestHeader, ...config.headers, extraHeaders },
+    headers: {
+      ...requestHeader,
+      ...config.headers,
+      [config.authorization]: config.token,
+      extraHeaders,
+    },
     method,
     body: payload,
   };

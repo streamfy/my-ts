@@ -13,12 +13,11 @@ import { IProject, IProjectResponse } from "../../interface/IProject";
  */
 export const store = async (
   endpoint?: string,
-  payload?: IProject,
-  token?: string
+  payload?: IProject
 ): Promise<IProjectResponse> => {
   return await fetch(
     useUrl(endpoint ? endpoint : config.endpoints.projects),
-    useHeaders(payload, "POST", { [config.authorization]: token })
+    useHeaders(payload, "POST")
   ).then(async (response) => {
     return await responseHandeling(response);
   });

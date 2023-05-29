@@ -12,12 +12,11 @@ import { config } from "../../config";
 
 export const destroy = async (
   endpoint?: string,
-  id?: string,
-  token?: string
+  id?: string
 ): Promise<IDelete> => {
   return await fetch(
     useUrl(endpoint ? endpoint : config.endpoints.projects + id),
-    useHeaders(undefined, "DELETE", { [config.authorization]: token })
+    useHeaders(undefined, "DELETE")
   ).then(async (response) => {
     return await responseHandeling(response);
   });

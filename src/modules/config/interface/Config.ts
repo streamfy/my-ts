@@ -5,4 +5,5 @@ export interface IConfig {
   apiVersion?: string;
   authorization: string;
   endpoints?: any;
+  token?: string;
 }

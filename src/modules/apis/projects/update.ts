@@ -9,15 +9,15 @@ import { IProject, IProjectResponse } from "../../interface/IProject";
  * @default  endpoint is /my/trading/accounts/id
  * @param endpoint
  * @param payload
- * @param id
+ * @param uuid
  */
 export const update = async (
   endpoint?: string,
   payload?: IProject,
-  id?: any
+  uuid?: any
 ): Promise<IProjectResponse> => {
   return await fetch(
-    useUrl(endpoint ? endpoint : config.endpoints.projects + id),
+    useUrl(endpoint ? endpoint : config.endpoints.projects + uuid),
     useHeaders(payload, "PUT")
   ).then(async (response) => {
     return await responseHandeling(response);
