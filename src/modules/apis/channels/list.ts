@@ -1,7 +1,7 @@
 import responseHandeling from "../../../core/responseHandeling";
 import { useHeaders, useUrl } from "../../../core";
-import {config} from "../../config";
-import {IProjectList} from "../../interface/IProjectList";
+import { config } from "../../config";
+import { IChannelList } from "../../interface/IChannelList";
 
 /**
  * @description list of trading accounts
@@ -10,10 +10,11 @@ import {IProjectList} from "../../interface/IProjectList";
  * @param endpoint
  */
 
-export const list = async (
-  endpoint?: string
-): Promise<IProjectList> => {
-  return await fetch(useUrl(endpoint ? endpoint : config.endpoints.projects), useHeaders()).then(async (response) => {
+export const list = async (endpoint?: string): Promise<IChannelList> => {
+  return await fetch(
+    useUrl(endpoint ? endpoint : config.endpoints.channels),
+    useHeaders()
+  ).then(async (response) => {
     return await responseHandeling(response);
   });
 };

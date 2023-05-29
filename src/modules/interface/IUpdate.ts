@@ -1,13 +1,12 @@
 import { IResponse } from "./IResponse";
-import { IProject } from "./IProject";
 
-export interface IChannel extends IResponse {
+export interface IUpdate extends IResponse {
   uuid: string;
-  project?: IProject;
   title: string;
   description?: string;
   logo?: string;
-  cover?: string;
+  url: string;
+  webhook_url: string;
   is_public?: boolean;
   status?: number;
 }
