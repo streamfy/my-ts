@@ -4,6 +4,7 @@ import { IProjectsModule, projects } from "./modules/apis/projects";
 import { IChannelsModule, channels } from "./modules/apis/channels";
 import { IPlaylistsModule, playlists } from "./modules/apis/playlists";
 import { attachments, IAttachmentsModule } from "./modules/apis/attachments";
+import { videos, IVideosModule } from "./modules/apis/videos";
 
 export interface IMyTs {
   config: typeof config;
@@ -12,6 +13,7 @@ export interface IMyTs {
   channels: IChannelsModule;
   playlists: IPlaylistsModule;
   attachments: IAttachmentsModule;
+  videos: IVideosModule;
 }
 
 export const myTs = (): IMyTs => {
@@ -22,5 +24,6 @@ export const myTs = (): IMyTs => {
     channels: channels(),
     playlists: playlists(),
     attachments: attachments(),
+    videos: videos(),
   };
 };
