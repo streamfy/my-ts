@@ -1,7 +1,6 @@
 import responseHandeling from "../../../core/responseHandeling";
 import { useHeaders, useUrl } from "../../../core";
 import { config } from "../../config";
-import { IChannel } from "../../interface/IChannel";
 import { IShort } from "../../interface/IShort";
 
 /**

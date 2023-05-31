@@ -21,8 +21,8 @@ export interface IMyTs {
 export const myTs = (): IMyTs => {
   return {
     config,
-    projects: projects(),
     tags: tags(),
+    projects: projects(),
     channels: channels(),
     playlists: playlists(),
     attachments: attachments(),

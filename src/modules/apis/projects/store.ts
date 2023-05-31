@@ -1,7 +1,7 @@
 import responseHandeling from "../../../core/responseHandeling";
 import { useHeaders, useUrl } from "../../../core";
 import { config } from "../../config";
-import { IProject, IProjectResponse } from "../../interface/IProject";
+import { IProject } from "../../interface/IProject";
 
 /**
  * @description post new project
@@ -14,7 +14,7 @@ import { IProject, IProjectResponse } from "../../interface/IProject";
 export const store = async (
   endpoint?: string,
   payload?: IProject
-): Promise<IProjectResponse> => {
+): Promise<IProject> => {
   return await fetch(
     useUrl(endpoint ? endpoint : config.endpoints.projects),
     useHeaders(payload, "POST")

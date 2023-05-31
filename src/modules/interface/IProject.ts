@@ -1,6 +1,6 @@
 import { IResponse } from "./IResponse";
 
-export interface IProjectResponse extends IResponse {
+export interface IProject extends IResponse {
   results: IProject;
 }
 

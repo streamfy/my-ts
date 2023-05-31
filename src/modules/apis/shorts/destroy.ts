@@ -16,7 +16,7 @@ export const destroy = async (
   id?: string
 ): Promise<IDelete> => {
   return await fetch(
-    useUrl(endpoint ? endpoint : config.endpoints.channels + id),
+    useUrl(endpoint ? endpoint : config.endpoints.shorts + id),
     useHeaders("DELETE")
   ).then(async (response) => {
     return await responseHandeling(response);

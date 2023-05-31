@@ -1,7 +1,7 @@
 import responseHandeling from "../../../core/responseHandeling";
 import { useHeaders, useUrl } from "../../../core";
 import { config } from "../../config";
-import { IProject, IProjectResponse } from "../../interface/IProject";
+import { IProject } from "../../interface/IProject";
 
 /**
  * @description update a trading account
@@ -15,7 +15,7 @@ export const update = async (
   endpoint?: string,
   payload?: IProject,
   uuid?: any
-): Promise<IProjectResponse> => {
+): Promise<IProject> => {
   return await fetch(
     useUrl(endpoint ? endpoint : config.endpoints.projects + uuid),
     useHeaders(payload, "PUT")
